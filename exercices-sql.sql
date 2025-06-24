@@ -100,21 +100,13 @@ VALUES
         'Clavier avec rétroéclairage LED',
         '59.99',
         '2025-06-20'
-    );
-
-INSERT INTO
-    `produits` (`nom`, `description`, `prix`, `date_ajout`)
-VALUES
+    ),
     (
         'Souris optique',
         'Souris sans fil',
         '29.50',
         '2025-06-21'
-    );
-
-INSERT INTO
-    `produits` (`nom`, `description`, `prix`, `date_ajout`)
-VALUES
+    ),
     (
         'Écran 24 pouces',
         'Écran Full HD',
@@ -147,54 +139,3 @@ FROM
     produits
 ORDER BY
     prix DESC;
-
--- Bonus 6
-ALTER TABLE utilisateurs ADD ville VARCHAR(100);
-
-INSERT INTO
-    utilisateurs (nom, prenom, email, date_inscription, ville)
-VALUES
-    (
-        'Gateau',
-        'Jean-Pierre',
-        'jeanpierre@email.com',
-        '2025-06-07',
-        'Boulogne'
-    );
-
-INSERT INTO
-    utilisateurs (nom, prenom, email, date_inscription, ville)
-VALUES
-    (
-        'Gateau',
-        'Tartine',
-        'tartine@email.com',
-        '2025-06-17',
-        'Boulogne'
-    );
-
-UPDATE utilisateurs
-SET
-    ville = "La Roche sur Yon"
-WHERE
-    email = "j.dupont@email.com";
-
-UPDATE utilisateurs
-SET
-    ville = "Nantes"
-WHERE
-    email = "mohamed.benali@email.com";
-
--- Bonus 7
-SELECT DISTINCT
-    ville
-FROM
-    utilisateurs;
-
--- Bonus 8
-SELECT
-    *
-FROM
-    produits
-WHERE
-    prix BETWEEN '30' AND '100';
